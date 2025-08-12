@@ -1,0 +1,21 @@
+{
+	"name": "ClientConnect",
+	"short_name": "ClientConnect",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#0d9488",
+	"orientation": "portrait",
+	"icons": [
+		{
+			"src": "/laravelpwa/icons/avatar.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/laravelpwa/icons/avatar.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}

@@ -1,0 +1,92 @@
+<dialog id="#" class="modal">
+	<div
+		class="modal-box bg-base-300/95 lg:max-h-[80vh] max-h-[500px] max-w-xl rounded-xl border border-base-content/5 z-10">
+		<form action="#" id="#" class="lg:space-y-5 space-y-4" method="post">
+			@csrf
+			<section>
+				<h3 class="lg:text-md font-semibold">Crear proceso</h3>
+			</section>
+
+			<!-- ALERTA -->
+			<div
+				class="alerta rounded-md bg-red-500/30 text-white p-4 transition-all duration-500 transform opacity-0 pointer-events-none hidden">
+				<div class="flex">
+					<div class="shrink-0">
+						<svg class="size-5 text-red-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd"
+								d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM8.28 7.22a.75.75 0 0 0-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 1 0 1.06 1.06L10 11.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L11.06 10l1.72-1.72a.75.75 0 0 0-1.06-1.06L10 8.94 8.28 7.22Z"
+								clip-rule="evenodd" />
+						</svg>
+					</div>
+					<div class="ml-3">
+						<h3 class="text-sm font-medium error_mensaje"></h3>
+						<div class="mt-2 text-sm">
+							<ul role="list" class="list-disc space-y-1 pl-5 error_lista"></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section class="grid lg:grid-cols-[auto_1fr] grid-cols-1 gap-2 gap-x-5">
+				<!-- Campo -->
+				<div class="lg:col-span-auto col-span-1">
+					<filedset>
+						<div class="img-group">
+							<legend class="fieldset-legend text-xs">Icono</legend>
+
+							<label for="icono">
+								<img src="{{ Storage::url('icons/avatar.png') }}"
+									class="preview size-15 p-0 hover:p-0.5 duration-200 rounded-2xl object-cover input cursor-pointer">
+							</label>
+							<input type="file" name="icono" id="icono" accept="image/*" class="hidden">
+						</div>
+					</filedset>
+				</div>
+
+				<div class="lg:col-span-1 col-span-1 gap-4 grid">
+					<!-- Campo -->
+					<fieldset class="fieldset lg:col-span-2 col-span-2">
+						<legend class="fieldset-legend">Título</legend>
+						<input type="text" name="titulo"
+							class="input input-md shadow-none border-[1px] border-base-content/5 w-full" />
+					</fieldset>
+
+					<!-- Campo -->
+					<fieldset class="fieldset lg:col-span-1 col-span-2">
+						<legend class="fieldset-legend">Estado</legend>
+						<select name="estado" class="select select-md shadow-none border-[1px] border-base-content/5 w-full">
+							<option disabled selected>Seleccionar estado</option>
+							<option value="1">Sin empezar</option>
+							<option value="2">En proceso</option>
+							<option value="3">Finalizado</option>
+							<option value="4">Solicitado</option>
+							<option value="5">Cancelado</option>
+						</select>
+					</fieldset>
+
+					<!-- Campo -->
+					<fieldset class="fieldset lg:col-span-1 col-span-2">
+						<legend class="fieldset-legend">Fecha entrega</legend>
+						<input type="date" name="fecha_finalizacion"
+							class="input input-md shadow-none border-[1px] border-base-content/5 w-full" />
+					</fieldset>
+
+					<!-- Campo -->
+					<fieldset class="fieldset lg:col-span-2 col-span-2">
+						<legend class="fieldset-legend">Información</legend>
+						<textarea class="textarea shadow-none border-[1px] border-base-content/5 w-full" name="informacion"
+							id="informacion" rows="5"></textarea>
+					</fieldset>
+				</div>
+			</section>
+
+			<div class="text-end">
+				<button type="submit" class="btn btn-sm btn-primary">Enviar</button>
+			</div>
+		</form>
+	</div>
+
+	<form method="dialog" class="modal-backdrop z-9">
+		<button>close</button>
+	</form>
+</dialog>
