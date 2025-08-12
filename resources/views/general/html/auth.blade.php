@@ -18,7 +18,7 @@
 					});
 			}
 		</script>
-		@vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/jquery.js'])
+		@vite(['resources/css/app.css', 'resources/js/app.js'])
 	</head>
 
 	<body class="h-full">
